@@ -26,7 +26,7 @@ Smart Expense Manager ek powerful aur user-friendly web application hai jo users
 | Login Page | Dashboard |
 |------------|-----------|
 | ![Login](https://via.placeholder.com/300x200?text=Login+Screen) | ![Dashboard](https://via.placeholder.com/300x200?text=Dashboard+Analytics) |
-*(Tip: Yahan tum apne project ke asli screenshots upload karke unka link daal sakte ho)*
+
 
 ---
 

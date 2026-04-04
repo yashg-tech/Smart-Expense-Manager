@@ -3,7 +3,7 @@ import yaml
 from function import add_expense, calculate_total, get_all_expenses, delete_expense_by_index, get_category_totals
 
 app = Flask(__name__)
-app.secret_key = "yash_smart_secure_key" # Zaroori hai sessions ke liye
+app.secret_key = "yash_smart_secure_key" 
 
 def load_config():
     with open('config.yaml', 'r') as file:
@@ -16,7 +16,7 @@ def login():
         phone = request.form.get('phone')
         otp = request.form.get('otp')
         
-        # Filhal Simple Check: OTP "1234" rakha hai testing ke liye
+        
         if otp == "1234":
             session['user'] = phone
             flash("Successfully Logged In!", "success")

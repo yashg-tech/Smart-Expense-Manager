@@ -1,13 +1,11 @@
 import yaml
-# Yaad rakhna: Agar tumhari file ka naam 'function.py' hai toh yahan se 's' hata dena
 from function import add_expense, view_expenses, calculate_total 
 
 def load_config():
     try:
         with open('config.yaml', 'r') as file:
             return yaml.safe_load(file)
-    except FileNotFoundError:
-        # Agar config file nahi mili toh default values
+    except FileNotFoundError:    
         return {'currency': 'INR', 'categories': ['Food', 'Travel', 'Others']}
 
 def main():

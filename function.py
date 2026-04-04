@@ -1,11 +1,10 @@
 import datetime
 
-# 1. Expense ko file mein save karne ka function
+
 def add_expense(amount, category, note):
     import datetime
     date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    # Ensure karo ki amount khali na ho aur sahi format mein ho
     try:
         amount_val = float(amount)
     except:
@@ -26,7 +25,7 @@ def get_all_expenses():
             for line in lines:
                 parts = line.split(",")
                 if len(parts) >= 4:
-                    # Ek dictionary bana rahe hain har expense ke liye
+                    
                     expense = {
                         'date': parts[0].strip(),
                         'amount': parts[1].strip(),
@@ -45,7 +44,7 @@ def calculate_total():
             for line in lines:
                 parts = line.split(",")
                 if len(parts) >= 2:
-                    # Yahan parts likhna zaroori hai
+                    
                     amount_str = parts[1].strip()
                     total += float(amount_str)
         return total
@@ -59,8 +58,7 @@ def delete_expense_by_index(index_to_delete):
         with open("expenses.txt", "r") as file:
             lines = file.readlines()
         
-        # Reverse list handle karne ke liye index sahi karna
-        # Kyunki hum website pe reverse dikha rahe hain [::-1]
+       
         actual_index = len(lines) - 1 - index_to_delete
         
         if 0 <= actual_index < len(lines):
@@ -82,7 +80,6 @@ def get_category_totals():
                 if len(parts) >= 3:
                     cat = parts.strip()
                     amt = float(parts.strip())
-                    # Dictionary mein category wise sum karna
                     totals[cat] = totals.get(cat, 0) + amt
         return totals # Example: {'Food': 500, 'Travel': 200}
     except:
